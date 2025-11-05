@@ -6,6 +6,7 @@
   - Initializes AOS scroll animations
 */
 
+// Default set
 const sampleItems = [
   {
     title: "Inception",
@@ -81,6 +82,211 @@ const sampleItems = [
   },
 ];
 
+// Section-specific item pools
+const itemsHotstar = [
+  {
+    title: "RRR",
+    kind: "Movie",
+    year: "2022",
+    img: "https://image.tmdb.org/t/p/w342/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg",
+  },
+  {
+    title: "K.G.F: Chapter 2",
+    kind: "Movie",
+    year: "2022",
+    img: "https://image.tmdb.org/t/p/w342/7q448EVOnuE3gVAx24krzO7SNXM.jpg",
+  },
+  {
+    title: "Taare Zameen Par",
+    kind: "Movie",
+    year: "2007",
+    img: "https://image.tmdb.org/t/p/w342/iJQIbOPm81fPEGKt5BPuZmfnA54.jpg",
+  },
+  {
+    title: "Dangal",
+    kind: "Movie",
+    year: "2016",
+    img: "https://image.tmdb.org/t/p/w342/p2lVAcPuRPSO8Al6hDDGw0OgMi8.jpg",
+  },
+  {
+    title: "Drishyam",
+    kind: "Movie",
+    year: "2015",
+    img: "https://www.themoviedb.org/t/p/w1280/gIClWRv5OSe8rl5Koi0AeUcCZ9Z.jpg",
+  },
+  {
+    title: "Premam",
+    kind: "Movie",
+    year: "2015",
+    img: "https://img10.hotstar.com/image/upload/f_auto,q_auto/sources/r1/cms/prod/7555/1711712987555-i",
+  },
+  {
+    title: "Bhaag Milkha Bhaag",
+    kind: "Movie",
+    year: "2013",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/bXywc0CEzS1fIshPWWi4V8A58U3.jpg",
+  },
+  {
+    title: "Pink",
+    kind: "Movie",
+    year: "2016",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/6xNhnyKm2M5FEOY7xv5iKiQ5P3.jpg",
+  },
+];
+
+const itemsCrunchyroll = [
+  {
+    title: "Jujutsu Kaisen",
+    kind: "Show",
+    year: "2020",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg",
+  },
+  {
+    title: "Chainsaw Man",
+    kind: "Show",
+    year: "2022",
+    img: "https://image.tmdb.org/t/p/w342/npdB6eFzizki0WaZ1OvKcJrWe97.jpg",
+  },
+  {
+    title: "Demon Slayer",
+    kind: "Show",
+    year: "2019",
+    img: "https://image.tmdb.org/t/p/w342/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg",
+  },
+  {
+    title: "Spy x Family",
+    kind: "Show",
+    year: "2022",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/7NAvPYPAu7MeHwP8E9sn81PqsRh.jpg",
+  },
+  {
+    title: "One Punch Man",
+    kind: "Show",
+    year: "2015",
+    img: "https://image.tmdb.org/t/p/w342/iE3s0lG5QVdEHOEZnoAxjmMtvne.jpg",
+  },
+  {
+    title: "Attack on Titan",
+    kind: "Show",
+    year: "2013",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg",
+  },
+  {
+    title: "Made in Abyss",
+    kind: "Show",
+    year: "2017",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/f6U3odfIb3pCXMGKRTQGGF9o1Qg.jpg",
+  },
+  {
+    title: "The Elusive Samurai",
+    kind: "Show",
+    year: "2024",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/f9ZgHhSwJKkoaVAuYz4uJaHsqii.jpg",
+  },
+];
+
+const itemsNetflix = [
+  {
+    title: "Extraction",
+    kind: "Movie",
+    year: "2020",
+    img: "https://image.tmdb.org/t/p/w342/wlfDxbGEsW58vGhFljKkcR5IxDj.jpg",
+  },
+  {
+    title: "Red Notice",
+    kind: "Movie",
+    year: "2021",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/lAXONuqg41NwUMuzMiFvicDET9Y.jpg",
+  },
+  {
+    title: "The Adam Project",
+    kind: "Movie",
+    year: "2022",
+    img: "https://image.tmdb.org/t/p/w342/wFjboE0aFZNbVOF05fzrka9Fqyx.jpg",
+  },
+  {
+    title: "Money Heist",
+    kind: "Show",
+    year: "2017",
+    img: "https://image.tmdb.org/t/p/w342/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg",
+  },
+  {
+    title: "Wednesday",
+    kind: "Show",
+    year: "2022",
+    img: "https://image.tmdb.org/t/p/w342/9PFonBhy4cQy7Jz20NpMygczOkv.jpg",
+  },
+  {
+    title: "Squid Game",
+    kind: "Show",
+    year: "2021",
+    img: "https://image.tmdb.org/t/p/w342/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg",
+  },
+  {
+    title: "The Gray Man",
+    kind: "Movie",
+    year: "2022",
+    img: "https://image.tmdb.org/t/p/w342/8cXbitsS6dWQ5gfMTZdorpAAzEH.jpg",
+  },
+  {
+    title: "Enola Holmes",
+    kind: "Movie",
+    year: "2020",
+    img: "https://image.tmdb.org/t/p/w342/riYInlsq2kf1AWoGm80JQW5dLKp.jpg",
+  },
+];
+
+const itemsPrime = [
+  {
+    title: "The Tomorrow War",
+    kind: "Movie",
+    year: "2021",
+    img: "https://image.tmdb.org/t/p/w342/yizL4cEKsVvl17Wc1mGEIrQtM2F.jpg",
+  },
+  {
+    title: "Reacher",
+    kind: "Show",
+    year: "2022",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/31GlRQMiDunO8cl3NxTz34U64rf.jpg",
+  },
+  {
+    title: "The Boys",
+    kind: "Show",
+    year: "2019",
+    img: "https://image.tmdb.org/t/p/w342/stTEycfG9928HYGEISBFaG1ngjM.jpg",
+  },
+  {
+    title: "Jack Ryan",
+    kind: "Show",
+    year: "2018",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/cO4py3L3q5GNPrA0qr1wVDrosK1.jpg",
+  },
+  {
+    title: "Coming 2 America",
+    kind: "Movie",
+    year: "2021",
+    img: "https://image.tmdb.org/t/p/w342/nWBPLkqNApY5pgrJFMiI9joSI30.jpg",
+  },
+  {
+    title: "Cinderella",
+    kind: "Movie",
+    year: "2021",
+    img: "https://image.tmdb.org/t/p/w342/clDFqATL4zcE7LzUwkrVj3zHvk7.jpg",
+  },
+  {
+    title: "The Peripheral",
+    kind: "Show",
+    year: "2022",
+    img: "https://image.tmdb.org/t/p/w342/7Bd4EUOqQDKZXA6Od5gkfzRNb0.jpg",
+  },
+  {
+    title: "Sound of Metal",
+    kind: "Movie",
+    year: "2019",
+    img: "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/3178oOJKKPDeQ2legWQvMPpllv.jpg",
+  },
+];
+
 function createCard({ title, kind, year, img }) {
   const a = document.createElement("a");
   a.href = "#";
@@ -111,7 +317,14 @@ function buildRow(swiperContainer) {
   }
 
   const wrapper = swiperContainer.querySelector(".swiper-wrapper");
-  sampleItems.forEach((item) => {
+  const sectionTitle = swiperContainer.closest("section")?.dataset?.title || "";
+  let pool = sampleItems;
+  if (sectionTitle.includes("JioHotstar")) pool = itemsHotstar;
+  else if (sectionTitle.includes("Crunchyroll")) pool = itemsCrunchyroll;
+  else if (sectionTitle.includes("Netflix")) pool = itemsNetflix;
+  else if (sectionTitle.includes("Prime")) pool = itemsPrime;
+
+  pool.forEach((item) => {
     const slide = document.createElement("div");
     slide.className = "swiper-slide !w-auto";
     slide.appendChild(createCard(item));

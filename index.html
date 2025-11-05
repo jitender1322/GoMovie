@@ -4,7 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GOMovies – Explore</title>
-    <meta name="description" content="Movie and TV discovery UI demo built with TailwindCSS, Swiper, and AOS." />
+    <meta
+      name="description"
+      content="Movie and TV discovery UI demo built with TailwindCSS, Swiper, and AOS."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="./" />
+    <meta name="theme-color" content="#0b0b0d" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GOMovies – Explore" />
+    <meta property="og:description" content="Movie and TV discovery UI demo built with TailwindCSS, Swiper, and AOS." />
+    <meta property="og:image" content="https://image.tmdb.org/t/p/w780/9z4jRr43JdtU66P0iy8h18OyLql.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GOMovies – Explore" />
+    <meta name="twitter:description" content="Movie and TV discovery UI demo built with TailwindCSS, Swiper, and AOS." />
+    <meta name="twitter:image" content="https://image.tmdb.org/t/p/w780/9z4jRr43JdtU66P0iy8h18OyLql.jpg" />
+
+    <!-- App metadata -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Tailwind via CDN (Play CDN for quick prototyping) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,110 +32,270 @@
         theme: {
           extend: {
             colors: {
-              bg: '#0b0b0d',
-              card: '#151518',
-              cardHover: '#1b1b1f',
-              brand: '#8b5cf6',
+              bg: "#0b0b0d",
+              card: "#151518",
+              cardHover: "#1b1b1f",
+              brand: "#8b5cf6",
             },
             boxShadow: {
-              'soft': '0 6px 24px -6px rgba(0,0,0,0.45)'
+              soft: "0 6px 24px -6px rgba(0,0,0,0.45)",
             },
             fontFamily: {
-              inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
-            }
-          }
-        }
+              inter: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+          },
+        },
       };
     </script>
 
     <!-- Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://image.tmdb.org" crossorigin />
+    <link rel="dns-prefetch" href="https://image.tmdb.org" />
+    <link rel="preconnect" href="https://media.themoviedb.org" crossorigin />
+    <link rel="dns-prefetch" href="https://media.themoviedb.org" />
+    <link rel="preconnect" href="https://i.pravatar.cc" crossorigin />
+    <link rel="dns-prefetch" href="https://i.pravatar.cc" />
 
     <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
     <!-- Swiper for carousels -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
     <!-- AOS animations -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
 
     <style>
-      html, body { height: 100%; }
-      body { background: #0b0b0d; }
-      .glass { backdrop-filter: blur(8px); background: rgba(21,21,24,0.6); }
-      .title-gradient { background: linear-gradient(90deg,#a78bfa, #22d3ee, #34d399); -webkit-background-clip: text; background-clip: text; color: transparent; }
-      .card-image { transition: transform .35s ease, filter .35s ease; }
-      .media-card:hover .card-image { transform: translateY(-4px) scale(1.03); filter: brightness(1.05) contrast(1.05); }
-      .ring-fade { box-shadow: 0 0 0 0 rgba(139,92,246,0.45); animation: pulseRing 2.2s infinite; }
-      @keyframes pulseRing { 0% { box-shadow: 0 0 0 0 rgba(139,92,246,0.45);} 70% { box-shadow: 0 0 0 16px rgba(139,92,246,0);} 100% { box-shadow: 0 0 0 0 rgba(139,92,246,0);} }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background: #0b0b0d;
+      }
+      .glass {
+        backdrop-filter: blur(8px);
+        background: rgba(21, 21, 24, 0.6);
+      }
+      .title-gradient {
+        background: linear-gradient(90deg, #a78bfa, #22d3ee, #34d399);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .card-image {
+        transition: transform 0.35s ease, filter 0.35s ease;
+      }
+      .media-card:hover .card-image {
+        transform: translateY(-4px) scale(1.03);
+        filter: brightness(1.05) contrast(1.05);
+      }
+      .ring-fade {
+        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.45);
+        animation: pulseRing 2.2s infinite;
+      }
+      @keyframes pulseRing {
+        0% {
+          box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.45);
+        }
+        70% {
+          box-shadow: 0 0 0 16px rgba(139, 92, 246, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+        }
+      }
     </style>
+    <script
+      type="text/javascript"
+      src="//pl27992381.effectivegatecpm.com/75/2d/3e/752d3e9f99f6482b8c095308402e9c4a.js"
+      defer
+    ></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "GOMovies",
+        "url": "./",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "./?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
   </head>
   <body class="min-h-full text-white font-inter antialiased">
     <!-- Header -->
     <header class="sticky top-0 z-40 border-b border-white/5 bg-black">
-      <div class="mx-auto max-w-[120rem] px-4 py-3 sm:px-6 lg:px-8 flex items-center gap-3">
+      <div
+        class="mx-auto max-w-[120rem] px-4 py-3 sm:px-6 lg:px-8 flex items-center gap-3"
+      >
         <div class="flex items-center gap-2">
-          <div class="h-9 w-9 rounded-xl bg-brand/20 grid place-items-center ring-fade">
+          <div
+            class="h-9 w-9 rounded-xl bg-brand/20 grid place-items-center ring-fade"
+          >
             <i class="ri-movie-2-fill text-brand text-xl"></i>
           </div>
-          <div class="text-lg sm:text-xl font-semibold tracking-tight">GOMovies</div>
+          <div class="text-lg sm:text-xl font-semibold tracking-tight">
+            GOMovies
+          </div>
         </div>
 
         <nav class="ml-6 hidden md:flex items-center gap-1 text-sm">
-          <a class="px-3 py-2 rounded-lg hover:bg-white/5 transition" href="#">Explore</a>
-          <a class="px-3 py-2 rounded-lg hover:bg-white/5 transition" href="#">Calendar</a>
-          <a class="px-3 py-2 rounded-lg hover:bg-white/5 transition" href="#">Community</a>
+          <a class="px-3 py-2 rounded-lg hover:bg-white/5 transition" href="#"
+            >Explore</a
+          >
+          <a class="px-3 py-2 rounded-lg hover:bg-white/5 transition" href="#"
+            >Calendar</a
+          >
+          <a class="px-3 py-2 rounded-lg hover:bg-white/5 transition" href="#"
+            >Community</a
+          >
         </nav>
 
         <div class="ml-auto flex items-center gap-2 sm:gap-3 w-full md:w-auto">
           <div class="relative flex-1 md:flex-none md:w-80">
-            <i class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-white/50"></i>
-            <input id="searchInput" placeholder="Search movies, shows, people…" class="w-full rounded-xl bg-white/5 pl-10 pr-10 py-2.5 outline-none focus:ring-2 focus:ring-brand/60 placeholder:text-white/40" />
-            <button aria-label="Microphone" class="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg hover:bg-white/10"><i class="ri-mic-line text-white/60"></i></button>
+            <i
+              class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-white/50"
+            ></i>
+            <input
+              id="searchInput"
+              placeholder="Search movies, shows, people…"
+              class="w-full rounded-xl bg-white/5 pl-10 pr-10 py-2.5 outline-none focus:ring-2 focus:ring-brand/60 placeholder:text-white/40"
+            />
+            <button
+              aria-label="Microphone"
+              class="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg hover:bg-white/10"
+            >
+              <i class="ri-mic-line text-white/60"></i>
+            </button>
           </div>
-          <button class="hidden sm:inline-flex p-2 rounded-xl hover:bg-white/10"><i class="ri-notification-3-line text-xl"></i></button>
-          <button class="p-0.5 rounded-full bg-gradient-to-tr from-brand to-cyan-400">
-            <img alt="avatar" src="https://i.pravatar.cc/64?img=12" class="h-9 w-9 rounded-full border-2 border-black object-cover" />
+          <button
+            class="hidden sm:inline-flex p-2 rounded-xl hover:bg-white/10"
+          >
+            <i class="ri-notification-3-line text-xl"></i>
+          </button>
+          <button
+            class="p-0.5 rounded-full bg-gradient-to-tr from-brand to-cyan-400"
+          >
+            <img
+              alt="avatar"
+              src="https://i.pravatar.cc/64?img=12"
+              class="h-9 w-9 rounded-full border-2 border-black object-cover"
+              width="36"
+              height="36"
+              loading="lazy"
+              decoding="async"
+            />
           </button>
         </div>
       </div>
     </header>
 
     <!-- Main -->
-    <main class="mx-auto max-w-[120rem] px-3 sm:px-6 lg:px-8 py-6 space-y-12">
+    <main class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8 py-6 space-y-12">
       <!-- Hero / Spotlight -->
-      <section class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-violet-600/20 via-cyan-500/10 to-emerald-500/10 p-5 sm:p-8" data-aos="fade-up">
+      <section
+        class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-violet-600/20 via-cyan-500/10 to-emerald-500/10 p-6 sm:p-8"
+        data-aos="fade-up"
+      >
         <div class="flex flex-col md:flex-row md:items-center gap-6">
-          <div class="flex-1 text-center md:text-left">
-            <div class="flex items-center justify-center md:justify-start gap-2 mb-2 text-white/70"><i class="ri-flashlight-fill text-brand"></i><span>Talk Of The Town</span></div>
-            <h1 class="text-[22px] sm:text-3xl lg:text-4xl font-bold leading-tight">Discover movies and shows everyone is talking about</h1>
-            <p class="mt-2 text-white/70 max-w-2xl mx-auto md:mx-0">Hand‑picked highlights across platforms, personalized for you. Scroll the shelves or browse by category.</p>
-            <div class="mt-4 flex flex-wrap items-center justify-center md:justify-start gap-2">
-              <button class="inline-flex items-center gap-2 rounded-xl bg-white text-black px-4 py-2 font-medium hover:opacity-90 transition"><i class="ri-play-fill"></i>Play Trailer</button>
-              <button class="inline-flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2 font-medium hover:bg-white/15 transition"><i class="ri-add-line"></i>Watchlist</button>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2 text-white/70">
+              <i class="ri-flashlight-fill text-brand"></i
+              ><span>Talk Of The Town</span>
             </div>
-            <!-- Mobile posters: horizontal scroll -->
-            <div class="mt-5 -mx-3 px-3 overflow-x-auto md:hidden">
-              <div class="flex gap-3 w-max">
-                <img class="h-36 w-24 rounded-2xl object-cover card-image" src="https://image.tmdb.org/t/p/w342/qsdjk9oAKSQMWs0Vt5Pyfh6O4GZ.jpg" alt="Poster" />
-                <img class="h-36 w-24 rounded-2xl object-cover card-image" src="https://image.tmdb.org/t/p/w342/1E5baAaEse26fej7uHcjOgEE2t2.jpg" alt="Poster" />
-                <img class="h-36 w-24 rounded-2xl object-cover card-image" src="https://www.themoviedb.org/t/p/w1280/xUWUODKPIilQoFUzjHM6wKJkP3Y.jpg" alt="Poster" />
-                <img class="h-36 w-24 rounded-2xl object-cover card-image" src="https://image.tmdb.org/t/p/w342/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg" alt="Poster" />
-                <img class="h-36 w-24 rounded-2xl object-cover card-image" src="https://image.tmdb.org/t/p/w342/6MKr3KgOLmzOP6MSuZERO41Lpkt.jpg" alt="Poster" />
-              </div>
+            <h1
+              class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight"
+            >
+              Discover movies and shows everyone is talking about
+            </h1>
+            <p class="mt-2 text-white/70 max-w-2xl">
+              Hand‑picked highlights across platforms, personalized for you.
+              Scroll the shelves or browse by category.
+            </p>
+            <div class="mt-4 flex gap-2">
+              <button
+                class="inline-flex items-center gap-2 rounded-xl bg-white text-black px-4 py-2 font-medium hover:opacity-90 transition"
+              >
+                <i class="ri-play-fill"></i>Play Trailer
+              </button>
+              <button
+                class="inline-flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2 font-medium hover:bg-white/15 transition"
+              >
+                <i class="ri-add-line"></i>Watchlist
+              </button>
             </div>
           </div>
-          <!-- Desktop posters grid -->
-          <div class="hidden md:grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 shrink-0">
+          <div
+            class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 shrink-0"
+          >
             <!-- Sample spotlight cards -->
-            <img class="h-40 w-28 sm:h-44 sm:w-32 rounded-2xl object-cover card-image" src="https://image.tmdb.org/t/p/w342/qsdjk9oAKSQMWs0Vt5Pyfh6O4GZ.jpg" alt="Poster" />
-            <img class="h-40 w-28 sm:h-44 sm:w-32 rounded-2xl object-cover card-image" src="https://image.tmdb.org/t/p/w342/1E5baAaEse26fej7uHcjOgEE2t2.jpg" alt="Poster" />
-            <img class="h-40 w-28 sm:h-44 sm:w-32 rounded-2xl object-cover card-image" src="https://www.themoviedb.org/t/p/w1280/xUWUODKPIilQoFUzjHM6wKJkP3Y.jpg" alt="Poster" />
-            <img class="h-40 w-28 sm:h-44 sm:w-32 rounded-2xl object-cover card-image" src="https://image.tmdb.org/t/p/w342/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg" alt="Poster" />
-            <img class="h-40 w-28 sm:h-44 sm:w-32 rounded-2xl object-cover card-image hidden md:block" src="https://image.tmdb.org/t/p/w342/6MKr3KgOLmzOP6MSuZERO41Lpkt.jpg" alt="Poster" />
+            <img
+              class="h-40 w-28 sm:h-44 sm:w-32 rounded-2xl object-cover card-image"
+              src="https://image.tmdb.org/t/p/w342/qsdjk9oAKSQMWs0Vt5Pyfh6O4GZ.jpg"
+              alt="Poster"
+            width="128"
+            height="176"
+            loading="lazy"
+            decoding="async"
+            />
+            <img
+              class="h-40 w-28 sm:h-44 sm:w-32 rounded-2xl object-cover card-image"
+              src="https://image.tmdb.org/t/p/w342/1E5baAaEse26fej7uHcjOgEE2t2.jpg"
+              alt="Poster"
+            width="128"
+            height="176"
+            loading="lazy"
+            decoding="async"
+            />
+            <img
+              class="h-40 w-28 sm:h-44 sm:w-32 rounded-2xl object-cover card-image"
+              src="https://www.themoviedb.org/t/p/w1280/xUWUODKPIilQoFUzjHM6wKJkP3Y.jpg"
+              alt="Poster"
+            width="128"
+            height="176"
+            loading="lazy"
+            decoding="async"
+            />
+            <img
+              class="h-40 w-28 sm:h-44 sm:w-32 rounded-2xl object-cover card-image"
+              src="https://image.tmdb.org/t/p/w342/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg"
+              alt="Poster"
+            width="128"
+            height="176"
+            loading="lazy"
+            decoding="async"
+            />
+            <img
+              class="h-40 w-28 sm:h-44 sm:w-32 rounded-2xl object-cover card-image hidden md:block"
+              src="https://image.tmdb.org/t/p/w342/6MKr3KgOLmzOP6MSuZERO41Lpkt.jpg"
+              alt="Poster"
+            width="128"
+            height="176"
+            loading="lazy"
+            decoding="async"
+            />
           </div>
         </div>
       </section>
@@ -124,52 +303,108 @@
       <!-- Section: Editor's Pick Of The Week -->
       <section data-aos="fade-up" data-title="Editor's Pick Of The Week">
         <div class="flex items-center justify-between mb-5">
-          <div class="flex items-center gap-2 text-lg sm:text-xl font-semibold"><i class="ri-heart-3-fill text-rose-400"></i><span>Editor's Pick Of The Week</span></div>
-          <button class="text-sm text-white/70 hover:text-white">View all</button>
+          <div class="flex items-center gap-2 text-lg sm:text-xl font-semibold">
+            <i class="ri-heart-3-fill text-rose-400"></i
+            ><span>Editor's Pick Of The Week</span>
+          </div>
+          <button class="text-sm text-white/70 hover:text-white">
+            View all
+          </button>
         </div>
-        <div class="swiper group pb-2" data-swiper="row">
+        <div class="swiper group" data-swiper="row">
           <div class="swiper-wrapper">
             <!-- Cards injected by JS for consistency -->
           </div>
           <div class="opacity-0 group-hover:opacity-100 transition">
-            <div class="swiper-button-prev !left-0 !text-white/80 hover:!text-white"></div>
-            <div class="swiper-button-next !right-0 !text-white/80 hover:!text-white"></div>
+            <div
+              class="swiper-button-prev !left-0 !text-white/80 hover:!text-white"
+            ></div>
+            <div
+              class="swiper-button-next !right-0 !text-white/80 hover:!text-white"
+            ></div>
           </div>
         </div>
       </section>
 
       <!-- Section: Don't Miss These on JioHotstar -->
       <section data-aos="fade-up" data-title="Don't Miss These on JioHotstar">
-        <div class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-5"><i class="ri-sparkling-2-line text-cyan-400"></i><span>Don't Miss These on JioHotstar</span></div>
-        <div class="swiper group pb-2" data-swiper="row"></div>
+        <div
+          class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-5"
+        >
+          <i class="ri-sparkling-2-line text-cyan-400"></i
+          ><span>Don't Miss These on JioHotstar</span>
+        </div>
+        <div class="swiper group" data-swiper="row"></div>
       </section>
 
       <!-- Section: Worth Watching on Crunchyroll -->
       <section data-aos="fade-up" data-title="Worth Watching on Crunchyroll">
-        <div class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-5"><i class="ri-vip-crown-2-fill text-amber-400"></i><span>Worth Watching on Crunchyroll</span></div>
-        <div class="swiper group pb-2" data-swiper="row"></div>
+        <div
+          class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-5"
+        >
+          <i class="ri-vip-crown-2-fill text-amber-400"></i
+          ><span>Worth Watching on Crunchyroll</span>
+        </div>
+        <div class="swiper group" data-swiper="row"></div>
       </section>
 
       <!-- Curated Collections: grid of large tiles -->
       <section data-aos="fade-up">
-        <div class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-5"><i class="ri-bookmark-3-line"></i><span>Curated Collections</span></div>
+        <div
+          class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-5"
+        >
+          <i class="ri-bookmark-3-line"></i><span>Curated Collections</span>
+        </div>
         <div class="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-3">
-          <a class="relative overflow-hidden rounded-3xl bg-card hover:bg-cardHover transition group" href="#">
-            <img src="https://image.tmdb.org/t/p/w780/9z4jRr43JdtU66P0iy8h18OyLql.jpg" alt="Collection" class="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-90 transition card-image" />
+          <a
+            class="relative overflow-hidden rounded-3xl bg-card hover:bg-cardHover transition group"
+            href="#"
+          >
+            <img
+              src="https://image.tmdb.org/t/p/w780/9z4jRr43JdtU66P0iy8h18OyLql.jpg"
+              alt="Collection"
+              class="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-90 transition card-image"
+              loading="lazy"
+              decoding="async"
+              width="780"
+              height="439"
+            />
             <div class="relative p-6 sm:p-8">
               <div class="text-2xl font-bold">Women of Courage</div>
               <p class="opacity-70">Stories of resilience and triumph.</p>
             </div>
           </a>
-          <a class="relative overflow-hidden rounded-3xl bg-card hover:bg-cardHover transition group" href="#">
-            <img src="https://image.tmdb.org/t/p/w780/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg" alt="Collection" class="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-90 transition card-image" />
+          <a
+            class="relative overflow-hidden rounded-3xl bg-card hover:bg-cardHover transition group"
+            href="#"
+          >
+            <img
+              src="https://image.tmdb.org/t/p/w780/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg"
+              alt="Collection"
+              class="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-90 transition card-image"
+              loading="lazy"
+              decoding="async"
+              width="780"
+              height="439"
+            />
             <div class="relative p-6 sm:p-8">
               <div class="text-2xl font-bold">Forever SRK</div>
               <p class="opacity-70">Celebrate the charisma of a superstar.</p>
             </div>
           </a>
-          <a class="relative overflow-hidden rounded-3xl bg-card hover:bg-cardHover transition group" href="#">
-            <img src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/6zKjoOOb3OZnZuiHtQZn4Kd69Gq.jpg" alt="Collection" class="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-90 transition card-image" />
+          <a
+            class="relative overflow-hidden rounded-3xl bg-card hover:bg-cardHover transition group"
+            href="#"
+          >
+            <img
+              src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/6zKjoOOb3OZnZuiHtQZn4Kd69Gq.jpg"
+              alt="Collection"
+              class="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-90 transition card-image"
+              loading="lazy"
+              decoding="async"
+              width="1066"
+              height="600"
+            />
             <div class="relative p-6 sm:p-8">
               <div class="text-2xl font-bold">Can You Trust Them?</div>
               <p class="opacity-70">Unreliable narrators, twisty plots.</p>
@@ -180,41 +415,164 @@
 
       <!-- Platforms sections -->
       <section data-aos="fade-up" data-title="Don't Miss These on Netflix">
-        <div class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-5"><i class="ri-netflix-fill text-red-500"></i><span>Don't Miss These on Netflix</span></div>
-        <div class="swiper group pb-2" data-swiper="row"></div>
+        <div
+          class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-5"
+        >
+          <i class="ri-netflix-fill text-red-500"></i
+          ><span>Don't Miss These on Netflix</span>
+        </div>
+        <div class="swiper group" data-swiper="row"></div>
       </section>
 
       <section data-aos="fade-up" data-title="Worth Watching on Prime">
-        <div class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-5"><i class="ri-amazon-fill text-amber-300"></i><span>Worth Watching on Prime</span></div>
-        <div class="swiper group pb-2" data-swiper="row"></div>
+        <div
+          class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-5"
+        >
+          <i class="ri-amazon-fill text-amber-300"></i
+          ><span>Worth Watching on Prime</span>
+        </div>
+        <div class="swiper group" data-swiper="row"></div>
       </section>
 
       <!-- Browse By -->
       <section data-aos="fade-up">
-        <div class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-4"><i class="ri-compass-3-fill text-brand"></i><span>Browse By</span></div>
+        <div
+          class="flex items-center gap-2 text-lg sm:text-xl font-semibold mb-4"
+        >
+          <i class="ri-compass-3-fill text-brand"></i><span>Browse By</span>
+        </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           <!-- Tile template repeated -->
-          <a class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4" href="#">
-            <div class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center group-hover:scale-105 transition"><i class="ri-layout-grid-fill text-xl text-brand"></i></div>
+          <a
+            class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4"
+            href="#"
+          >
+            <div
+              class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center group-hover:scale-105 transition"
+            >
+              <i class="ri-layout-grid-fill text-xl text-brand"></i>
+            </div>
             <div>
               <div class="font-semibold">Category</div>
               <div class="text-xs text-white/60">Action, Comedy, Drama…</div>
             </div>
           </a>
-          <a class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4" href="#"><div class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"><i class="ri-shapes-fill text-xl text-cyan-400"></i></div><div><div class="font-semibold">Genre</div><div class="text-xs text-white/60">Pick your vibe</div></div></a>
-          <a class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4" href="#"><div class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"><i class="ri-earth-fill text-xl text-emerald-400"></i></div><div><div class="font-semibold">Country</div><div class="text-xs text-white/60">Cinema from around the world</div></div></a>
-          <a class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4" href="#"><div class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"><i class="ri-translate-2 text-xl text-sky-400"></i></div><div><div class="font-semibold">Language</div><div class="text-xs text-white/60">Subbed/Dubbed originals</div></div></a>
-          <a class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4" href="#"><div class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"><i class="ri-award-fill text-xl text-amber-300"></i></div><div><div class="font-semibold">Award Winners</div><div class="text-xs text-white/60">Critically acclaimed</div></div></a>
-          <a class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4" href="#"><div class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"><i class="ri-user-smile-fill text-xl text-rose-300"></i></div><div><div class="font-semibold">Family Friendly</div><div class="text-xs text-white/60">Fun for everyone</div></div></a>
-          <a class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4" href="#"><div class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"><i class="ri-movie-2-fill text-xl text-fuchsia-300"></i></div><div><div class="font-semibold">Anime</div><div class="text-xs text-white/60">Series & films</div></div></a>
-          <a class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4" href="#"><div class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"><i class="ri-vip-crown-fill text-xl text-yellow-300"></i></div><div><div class="font-semibold">GOMovies Select</div><div class="text-xs text-white/60">Editor’s curation</div></div></a>
-          <a class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4" href="#"><div class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"><i class="ri-group-2-fill text-xl text-teal-300"></i></div><div><div class="font-semibold">Franchise</div><div class="text-xs text-white/60">Universes & sagas</div></div></a>
+          <a
+            class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4"
+            href="#"
+            ><div
+              class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"
+            >
+              <i class="ri-shapes-fill text-xl text-cyan-400"></i>
+            </div>
+            <div>
+              <div class="font-semibold">Genre</div>
+              <div class="text-xs text-white/60">Pick your vibe</div>
+            </div></a
+          >
+          <a
+            class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4"
+            href="#"
+            ><div
+              class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"
+            >
+              <i class="ri-earth-fill text-xl text-emerald-400"></i>
+            </div>
+            <div>
+              <div class="font-semibold">Country</div>
+              <div class="text-xs text-white/60">
+                Cinema from around the world
+              </div>
+            </div></a
+          >
+          <a
+            class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4"
+            href="#"
+            ><div
+              class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"
+            >
+              <i class="ri-translate-2 text-xl text-sky-400"></i>
+            </div>
+            <div>
+              <div class="font-semibold">Language</div>
+              <div class="text-xs text-white/60">Subbed/Dubbed originals</div>
+            </div></a
+          >
+          <a
+            class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4"
+            href="#"
+            ><div
+              class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"
+            >
+              <i class="ri-award-fill text-xl text-amber-300"></i>
+            </div>
+            <div>
+              <div class="font-semibold">Award Winners</div>
+              <div class="text-xs text-white/60">Critically acclaimed</div>
+            </div></a
+          >
+          <a
+            class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4"
+            href="#"
+            ><div
+              class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"
+            >
+              <i class="ri-user-smile-fill text-xl text-rose-300"></i>
+            </div>
+            <div>
+              <div class="font-semibold">Family Friendly</div>
+              <div class="text-xs text-white/60">Fun for everyone</div>
+            </div></a
+          >
+          <a
+            class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4"
+            href="#"
+            ><div
+              class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"
+            >
+              <i class="ri-movie-2-fill text-xl text-fuchsia-300"></i>
+            </div>
+            <div>
+              <div class="font-semibold">Anime</div>
+              <div class="text-xs text-white/60">Series & films</div>
+            </div></a
+          >
+          <a
+            class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4"
+            href="#"
+            ><div
+              class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"
+            >
+              <i class="ri-vip-crown-fill text-xl text-yellow-300"></i>
+            </div>
+            <div>
+              <div class="font-semibold">GOMovies Select</div>
+              <div class="text-xs text-white/60">Editor’s curation</div>
+            </div></a
+          >
+          <a
+            class="glass rounded-2xl p-5 hover:bg-white/10 transition group flex items-center gap-4"
+            href="#"
+            ><div
+              class="h-11 w-11 rounded-xl bg-white/10 grid place-items-center"
+            >
+              <i class="ri-group-2-fill text-xl text-teal-300"></i>
+            </div>
+            <div>
+              <div class="font-semibold">Franchise</div>
+              <div class="text-xs text-white/60">Universes & sagas</div>
+            </div></a
+          >
         </div>
       </section>
     </main>
 
-    <footer class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8 py-8 text-xs text-white/60 border-t border-white/5">
-      <div class="flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
+    <footer
+      class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8 py-8 text-xs text-white/60 border-t border-white/5"
+    >
+      <div
+        class="flex flex-col sm:flex-row gap-2 sm:items-center justify-between"
+      >
         <div>© 2025 GOMovies Demo. Educational use only.</div>
         <div class="flex gap-4">
           <a class="hover:text-white" href="#">Privacy</a>
@@ -225,12 +583,15 @@
     </footer>
 
     <!-- Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
 
     <!-- App JS -->
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
+    <script
+      type="text/javascript"
+      src="//pl27992387.effectivegatecpm.com/be/65/47/be6547c2414dd38cd1c6c58c87225d01.js"
+      defer
+    ></script>
   </body>
-  </html>
-
-
+</html>
