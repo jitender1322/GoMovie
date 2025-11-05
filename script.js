@@ -289,7 +289,7 @@ const itemsPrime = [
 
 function createCard({ title, kind, year, img }) {
   const a = document.createElement("a");
-  a.href = "#";
+  a.href = "https://www.effectivegatecpm.com/xbxge0yu80?key=5757f358d7451434fc2ae21125bb4dda";
   a.className = "media-card block w-[140px] sm:w-[176px] select-none";
   a.setAttribute("title", title);
 
